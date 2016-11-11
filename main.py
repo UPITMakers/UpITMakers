@@ -83,9 +83,11 @@ if __name__ == '__main__':
     while True:
 
         luxes = light.value()
-        luxes = int(luxes)    
+        luxes = int(luxes)  
+	tempe = temp.value()
         display.setColor(luxes, luxes, luxes)
         display.clear()
+	
         
         datafreeboard['alive'] = "1"
         datafreeboard['luxes'] =  luxes
