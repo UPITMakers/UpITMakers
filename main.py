@@ -11,13 +11,11 @@ import pyupm_grove as grove
 import pyupm_grovespeaker as upmGrovespeaker
 import pyupm_i2clcd as lcd
 
-
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 credentials = ConfigParser.ConfigParser()
 credentialsfile = "credentials.config"
 credentials.read(credentialsfile)
-
 
 button = grove.GroveButton(8)
 display = lcd.Jhd1313m1(0, 0x3E, 0x62)
@@ -64,7 +62,6 @@ atexit.register(exitHandler)
 signal.signal(signal.SIGINT, SIGINTHandler)
 
 if __name__ == '__main__':
-
 
     credential = credentials.get("telegram", "token")
     updater = Updater(credential)
